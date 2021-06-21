@@ -1,5 +1,6 @@
 "use strict";
-const numberOfFilms = prompt('mcmlms');
+const numberOfFilms = +prompt('mcmlms','');
+
 const personalMovieDB = {
   count: numberOfFilms,
   movies: {},
@@ -7,6 +8,16 @@ const personalMovieDB = {
   genres:[],
   privat: false
 };
+
+if (personalMovieDB.count<10){
+  alert('просмотрено мало фильмов!');
+} else if(personalMovieDB.count>=10 && personalMovieDB.count<30) {
+  alert('любитель');
+} else if (personalMovieDB.count>=30){
+  alert('киноман');
+} else {
+  alert('произошла ошибка');
+}
 
 for (let i = 0; i<2; i++ ){
   const a = prompt('один из последних просмотренных фильмов?', ""),
@@ -17,6 +28,30 @@ for (let i = 0; i<2; i++ ){
     i--;
   }
 }
+
+// let i = 0;
+// while (i<2){
+//   const a = prompt('один из последних просмотренных фильмов?', ""),
+//    b = prompt('на сколько оцените его?', "");
+//   if (a !='' && b != '' && a!= null && b!= null && a.length<50 ){
+//     personalMovieDB.movies[a]=b;
+//   } else {
+//     i--;
+//   }
+//   i++;
+// }
+
+// do {
+//   const a = prompt('один из последних просмотренных фильмов?', ""),
+//    b = prompt('на сколько оцените его?', "");
+//   if (a !='' && b != '' && a!= null && b!= null && a.length<50 ){
+//     personalMovieDB.movies[a]=b;
+//   } else {
+//     i--;
+//   }
+//   i++;
+// }
+// while (i<2);
 
 console.log(personalMovieDB);
 
@@ -33,3 +68,4 @@ switch(num){
     console.log('try again');
     break;
 }
+
